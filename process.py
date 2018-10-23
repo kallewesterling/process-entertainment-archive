@@ -33,10 +33,10 @@ def check_ad(title):
 		return(False)
 
 
-search_result_directory =		"search_results"
-stopfiles = 					['.DS_Store']
-savefile_csv =					"results.csv"
-remove_duplicates = 			True
+search_result_directory = "search_results"
+stopfiles = ['.DS_Store']
+savefile_csv = "results.csv"
+remove_duplicates = True
 
 files = [f for f in os.listdir(search_result_directory) if os.path.isfile(os.path.join(search_result_directory, f))]
 files = [x for x in files if x not in stopfiles]
