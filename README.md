@@ -15,6 +15,12 @@ pip install pandas
 pip install beautifulsoup4
 ```
 
+Drop the `ProQuestResult.py` file into your project folder. Then run the following command in your project, whether it is a Python file or a Jupyter Notebook:
+
+```python
+from ProQuestResult import *
+```
+
 
 ## Set Up the Program
 
@@ -30,12 +36,6 @@ STOPFILES = ['.DS_Store']
 
 
 ## How to Run
-
-Drop the `ProQuestResult.py` file into your project folder. Then run the following command in your project, whether it is a Python file or a Jupyter Notebook:
-
-```python
-from ProQuestResult import *
-```
 
 You have two options when creating an object containing your search results: `ProQuestResult` (1) and `ProQuestResults` (2). The subtle difference is in the plural.
 
