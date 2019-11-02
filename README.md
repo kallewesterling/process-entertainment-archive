@@ -75,7 +75,6 @@ This also provides an easy way to export the DataFrame to a CSV, by calling:
 ```python
 parsed_results.df.to_csv('xxx.csv')
 ``` 
-**TODO: I need to look into whether this actually works**
 
 *Note: Accessing the instance variables `results` and `df` will both generate them to order. That means that the script, depending on the number of search results in each file, can take some time to run.*
 
