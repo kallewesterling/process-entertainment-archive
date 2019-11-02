@@ -7,9 +7,9 @@ A python script to traverse through HTML files with ProQuest results to generate
 
 This package requires you to install two other packages for it to run: `pandas` and `BeautifulSoup`. Install them by running these two commands in your command line:
 
-`pip install pandas`
+`sh pip install pandas`
 
-`pip install beautifulsoup4`
+`sh pip install beautifulsoup4`
 
 
 ## Set Up the Program
