@@ -7,16 +7,21 @@ A python script to traverse through HTML files with ProQuest results to generate
 
 This package requires you to install two other packages for it to run: `pandas` and `BeautifulSoup`. Install them by running these two commands in your command line:
 
-`sh pip install pandas`
+```sh
+pip install pandas`
+```
 
-`sh pip install beautifulsoup4`
+```sh
+pip install beautifulsoup4`
+```
 
 
 ## Set Up the Program
 
 The program allows you to define two optional settings. Open `ProQuestResult.py` and find the two lines that contain the two variables `STOPFILES` and `CACHE_RAW_IN_OBJECT`.
 
-`STOPFILES` needs to be a list of strings. It determines which file names the program will block when reading a directory. By default it is set to only include one element, Mac OS X's annoyingly present .DS_Store files: `['.DS_Store']`
+`STOPFILES` needs to be a list of strings. It determines which file names the program will block when reading a directory. By default it is set to only include one element, Mac OS X's annoyingly present .DS_Store files:
+```python STOPFILES = ['.DS_Store']```
 
 `CACHE_RAW_IN_OBJECT` needs to be a boolean. It determines whether each ProQuestResult will contain an instance variable (`ProQuestResult._raw`) that contains the raw HTML from each of the files. By default, this variable is set to `False` in order to save memory. Switch to `True` if you for some reason need to be able to access the HTML from your search result file.
 
