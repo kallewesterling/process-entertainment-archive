@@ -102,6 +102,6 @@ To access all the search results as a DataFrame: `parsed_results.df`
 *Note: As is the case with `ProQuestResult`, accessing the instance variable `results` and `df` will both generate them to order. That means that the script, depending on the number of search results in each file, can take some time to run.*
 
 
-#### Future features
+## Future features
 
-*Note that since the object is set up by numerous files, currently the `ProQuestResults` object cannot provide the search queries. In a future version, it will be able to provide the search query for each file (through requesting `ProQuestResults.files_to_queries`) and each file that contains each search query (through requesting `ProQuestResults.queries_to_files`).*
+Note that since the `ProQuestResults` object is set up by numerous files, currently the `ProQuestResults` object cannot provide the search queries. In a future version, it will be able to provide the search query for each file (through requesting `ProQuestResults.files_to_queries`) and each file that contains each search query (through requesting `ProQuestResults.queries_to_files`).
