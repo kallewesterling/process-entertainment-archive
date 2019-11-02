@@ -209,6 +209,8 @@ class ProQuestResults(object):
         self.directory = directory # make sure we can access this later
         self._results = None
         self._df = None
+        self._query_to_files = None
+        self._files_to_query = None
     
     
     def __len__(self):
@@ -247,10 +249,28 @@ class ProQuestResults(object):
     
     
     @property
-    def queries_to_files(self):
-        raise NotImplementedError("This feature is not yet available.")
+    def query_to_files(self):
+        if self._query_to_files is None: self._query_to_files = self._setup_query_to_files()
+        return(self._query_to_files)
     
     
     @property
-    def files_to_queries(self):
-        raise NotImplementedError("This feature is not yet available.")
+    def files_to_query(self):
+        if self._files_to_query is None: self._files_to_query = self._setup_files_to_query()
+        return(self._files_to_query)
+    
+    
+    def _setup_query_to_files(self):
+        _ = {}
+        for file in self.files:
+            query = ProQuestResult(file).query
+            if query not in _: _[query] = []
+            _[query].append(file)
+        return(_)
+    
+    def _setup_files_to_query(self):
+        _ = {}
+        for file in self.files:
+            query = ProQuestResult(file).query
+            if file not in _: _[file] = query # technically, we don't have to test for this condition here but better safe than sorry.
+        return(_)

@@ -53,7 +53,7 @@ To set up an object, simply provide it with a file variable to set it up:
 parsed_results = ProQuestResult(file = './my_search_results/the_file_with_results.html')
 ```
 
-The `file` parameter should be a string but can also be a PosixPath (see pathlib's documentation for reference).
+The `file` parameter should be a string but can also be a PosixPath (see [pathlib's documentation for reference](https://docs.python.org/3/library/pathlib.html)).
 
 
 #### Accessing search results
@@ -138,6 +138,40 @@ parsed_results.df
 *Note: As is the case with `ProQuestResult`, accessing the instance variable `results` and `df` will both generate them to order. That means that the script, depending on the number of search results in each file, can take some time to run.*
 
 
+#### Accessing queries for the search result files and vice versa
+
+Since the `ProQuestResults` object is set up by numerous files, which all contain *one* search query, there are two methods to access search query information. The program can provide the search query for each file (through requesting `ProQuestResults.files_to_queries`) and a list of the files that contains each search query (through requesting `ProQuestResults.query_to_files`).
+
+**`files_to_query`** is accessible as a native Python dictionary of the key-value structure `{Path(file): 'search term'}`:
+
+```python
+dict_object_with_files_to_query = parsed_results.files_to_query
+```
+
+**`query_to_files`** is accessible in the same way a native Python dictionary but with the inverse key-value structure `{Path(file): 'search term'}`:
+
+```python
+dict_object_with_query_to_files = parsed_results.query_to_files
+```
+
+Since both of these methods provide you with a native dictionary, you can use any of the native functions built in to the dictionary type with these results such as *slicing*:
+
+```python
+file = Path('./my_search_results/the_file_with_results.html')
+dict_object_with_files_to_query[file]
+```
+
+You can also iterate through the results through the dictionary type's native method `items()`:
+
+```python
+for search_term, list_of_files in dict_object_with_query_to_files.items():
+    print("The search term", search_term, "was used to generate these files:", list_of_files)
+
+for file, search_term in dict_object_with_files_to_query.items():
+    print("The file", file, "was generated from this search term:", search_term)
+```
+
+
 ## Future features
 
-Note that since the `ProQuestResults` object is set up by numerous files, currently the `ProQuestResults` object cannot provide the search queries. In a future version, it will be able to provide the search query for each file (through requesting `ProQuestResults.files_to_queries`) and each file that contains each search query (through requesting `ProQuestResults.queries_to_files`).
+No future features are planned. If you would like to request a feature, feel free to so by opening [an Issue on GitHub](https://github.com/kallewesterling/process-entertainment-archive/issues).
