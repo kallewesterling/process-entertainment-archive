@@ -106,15 +106,15 @@ The program is flexible and can ingest a number of variations through the two va
 parsed_results = ProQuestResult(files = ['./first_file.html', './second_file.html', './third_file.html', './fourth_file.html'])
 ```
 
-**`directory`** can be provided as either (1) a string (or a PosixPath) with a path to a directory containing the search result files you want to work with, or (2) a list of strings (or PosixPaths) that refer to any number of directories containing search result files.
+**`directory`** can be provided as either *(i)* a string (or a PosixPath) with a path to a directory containing the search result files you want to work with, or *(ii)* a list of strings (or PosixPaths) that refer to any number of directories containing search result files.
 
-For example, if you work with a single directory (1 above), you would call:
+*(i)* For example, if you work with a single directory, you would call:
 
 ```python
 parsed_results = ProQuestResults(directory = './my_search_results/')
 ```
 
-If you have a number of directories you need to summarize in one object (see 2 above), you would call the same object but set it up with a list of directories:
+*(ii)* If you have a number of directories you need to summarize in one object, you would call the same object but set it up with a list of directories:
 
 ```python
 parsed_results = ProQuestResults(directory = ['./my_first_search_result_directory/', './my_second_search_result_directory/'])
