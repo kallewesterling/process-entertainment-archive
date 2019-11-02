@@ -126,11 +126,13 @@ parsed_results = ProQuestResults(directory = ['./my_first_search_result_director
 
 Once the object has been set up, you can easily access the search results in the same manner as the examples under `ProQuestResult` above:
 
-To access all the search results as a list of dictionaries: ```python
+To access all the search results as a list of dictionaries: 
+```python
 print(parsed_results.results)
 ```
 
-To access all the search results as a DataFrame: ```python
+To access all the search results as a DataFrame: 
+```python
 parsed_results.df
 ```
 
